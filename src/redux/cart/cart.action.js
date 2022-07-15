@@ -6,6 +6,8 @@ export const toggleCartHidden = () => ({
   type: TOGGLE_CART_HIDDEN
 });
 
+
+// The action basically dispatches a function that returns an object. 
 export const addItem = item => ({
   type: ADD_CART_ITEM,
   payload: item

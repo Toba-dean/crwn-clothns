@@ -11,7 +11,7 @@ import CheckOut from './pages/CheckOut/CheckOut';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// firebase auth
+// firebase
 import { auth, createUserProfile, addCollectionsAndDocuments } from './firebase/firebase.utils';
 import { onAuthStateChanged } from 'firebase/auth'
 import { onSnapshot } from "firebase/firestore";

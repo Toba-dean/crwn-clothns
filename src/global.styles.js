@@ -1,0 +1,23 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px 60px;
+
+    // Max = Anything below
+    // Min = Anything above
+    @media screen and (max-width: 800px){
+        padding: 10px;
+    }
+  }
+    
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  *, *::after, *::before{
+    box-sizing: border-box;
+  }  
+`

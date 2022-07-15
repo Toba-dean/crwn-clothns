@@ -18,6 +18,7 @@ const CollectionOverview = ({ collections }) => {
   )
 }
 
+// get the collection from redux
 const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview
 })

@@ -22,7 +22,9 @@ const Collection = ({ collection }) => {
   )
 }
 
+// the router prop is gotten from the withRouter HOC
 const mapStateToProps = (state, { router: { params } }) => ({
+  // get the state of the collection with the paramsId
   collection: selectCollection(params.collectionId)(state)
 })
 

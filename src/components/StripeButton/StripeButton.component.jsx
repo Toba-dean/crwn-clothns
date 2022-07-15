@@ -10,6 +10,7 @@ const StripeButton = ({ price }) => {
     alert('Payment successful!')
   }
 
+  // gotten from github but use documentation for more styles
   return (
     <StripeCheckout
       label='Pay Now'

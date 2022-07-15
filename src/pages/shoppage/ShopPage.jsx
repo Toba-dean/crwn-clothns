@@ -28,10 +28,14 @@ export class ShopPage extends Component{
   componentDidMount() {
     const { updateCollections } = this.props;
 
+    // get a ref to the collection in the db called collections
     const collectionRef = collection(db, 'collections')
 
     onSnapshot(collectionRef, async snapshot => {
+      // get the collection as an array from the db
       const collectionsMap = convertCollectionSnapshotToMap(snapshot)
+
+      // update the collection from [] to an array of objects
       updateCollections(collectionsMap)
       this.setState({ loading: false })
     });
@@ -41,13 +45,25 @@ export class ShopPage extends Component{
   //   this.unsubscribeFromSnapShot()
   // } 
 
+  // this renders the collection overview component when to route to the /shop, then renders the total collection page on /shop/id i.e /shop/hats
   render() {
     const { loading } = this.state
+
     return (
       <div className='shop-page'>
         <Routes>
-          <Route path='/' element={<CollectionOverviewWithSpinner isLoading={loading} />} />
-          <Route path='/:collectionId' element={<CollectionWithSpinner isLoading={loading} />} />
+          <Route 
+            path='/' 
+            element={
+              <CollectionOverviewWithSpinner isLoading={loading} />
+            } 
+          />
+          <Route 
+            path='/:collectionId' 
+            element={
+              <CollectionWithSpinner isLoading={loading} />
+            } 
+          />
         </Routes>
       </div>
     )

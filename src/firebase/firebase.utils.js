@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, setDoc, getDoc, doc, collection, getDocs, writeBatch} from 'firebase/firestore';
+import { getFirestore, setDoc, getDoc, doc, collection, writeBatch} from 'firebase/firestore';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 // Your web app's Firebase configuration
@@ -69,7 +69,7 @@ export const addCollectionsAndDocuments = async (collectionKey, objectsToAdd) =>
   return await batch.commit();
 }
 
-// Getting the SHOP collections from firebase and converting it from an object to an array
+// Getting the SHOP collections from firebase and converting it from an object to an array then return the title , items, e.t.c.
 export const convertCollectionSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
     const { title, items } = doc.data()

@@ -27,6 +27,7 @@ const CheckOut = ({ cartItems, totalValue }) => {
         </div>
       </div>
       {
+        // map through all ele in the cart and render the checkout items
         cartItems.map(cartItem => (
           <CheckOutItem key={cartItem.id} item={cartItem} />
         ))
@@ -45,6 +46,7 @@ const CheckOut = ({ cartItems, totalValue }) => {
   )
 }
 
+// get the items for the cart from the redux store 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
   totalValue: selectCartTotal

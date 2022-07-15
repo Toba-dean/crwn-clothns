@@ -35,6 +35,7 @@ const CheckOutItem = ({ item, clearItem, addItem, removeItem }) => {
   )
 }
 
+// get this functions from the store and dispatch them
 const mapDispatchToProps = dispatch => ({
   clearItem: item => dispatch(clearItem(item)),
   addItem: item => dispatch(addItem(item)),

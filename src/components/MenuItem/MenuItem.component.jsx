@@ -7,6 +7,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   let navigate = useNavigate();
 
   return (
+    // on click of the card render the colection page.
     <div className={`${size} menu-item`} onClick={() => navigate(`${linkUrl}`)}>
 
       {/* The reason for this div is because we don't want the image to get bigger than the containing div when the parent div is hovered */}
